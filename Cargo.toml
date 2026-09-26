@@ -1,0 +1,30 @@
+[package]
+name = "iperf3-tui"
+version = "0.1.0"
+edition = "2021"
+authors = ["Alfonso0p6"]
+description = "TUI wrapper avanzato e reattivo per iperf3 scritto in Rust"
+
+[dependencies]
+# TUI & Terminal Handling
+ratatui = "0.29"
+crossterm = { version = "0.28", features = ["event-stream"] }
+
+# Asynchronous Runtime & Streams
+tokio = { version = "1.40", features = ["full"] }
+futures = "0.3"
+
+# Networking & Data Parsing
+reqwest = { version = "0.12", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+regex = "1.10"
+
+# Utilities & Error Handling
+anyhow = "1.0"
+
+[profile.release]
+opt-level = 'z'     # Ottimizza per la dimensione del binario
+lto = true          # Link-Time Optimization globale
+codegen-units = 1   # Riduce il parallelismo in codegen per un'ottimizzazione massima
+strip = true        # Rimuove automaticamente i simboli di debug dal binario
+panic = 'abort'     # Rimuove il landing pad per la gestione del panico
