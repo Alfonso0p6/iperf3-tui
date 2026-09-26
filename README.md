@@ -43,12 +43,12 @@ You can install `iperf3-tui` instantly using the pre-compiled binaries from the 
 
 #### Linux & macOS (Shell)
 ```bash
-curl --proto '=https' --tlsv1.2 -lsSf [https://github.com/Alfonso0p6/iperf3-tui/releases/latest/download/iperf3-tui-installer.sh](https://github.com/Alfonso0p6/iperf3-tui/releases/latest/download/iperf3-tui-installer.sh) | sh
+curl --proto '=https' --tlsv1.2 -lsSf https://github.com/Alfonso0p6/iperf3-tui/releases/latest/download/iperf3-tui-installer.sh | sh
 ```
 
 #### Windows (PowerShell)
 ```powershell
-irm [https://github.com/Alfonso0p6/iperf3-tui/releases/latest/download/iperf3-tui-installer.ps1](https://github.com/Alfonso0p6/iperf3-tui/releases/latest/download/iperf3-tui-installer.ps1) | iex
+irm https://github.com/Alfonso0p6/iperf3-tui/releases/latest/download/iperf3-tui-installer.ps1 | iex
 ```
 
 ---
