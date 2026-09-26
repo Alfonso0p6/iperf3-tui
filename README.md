@@ -19,8 +19,20 @@ The application loads public `iperf3` servers, measures their TCP latency, lets 
 - `iperf3` available on system `PATH`
 - A terminal with Unicode support
 
-Install `iperf3` using your operating system's package manager. For example:
+Install `iperf3` using your operating system's package manager:
 
+### Windows
+You can install `iperf3` on Windows using package managers like `winget` or `choco`:
+```powershell
+# Using Winget (built-in on Windows 10/11)
+winget install -e --id ar51an.iPerf3
+
+# Using Chocolatey
+choco install iperf3
+```
+*Alternatively, you can download the official binaries from [ESnet iperf3](https://software.es.net/iperf/) and add the executable folder to your system `PATH`.*
+
+### Linux / macOS
 ```bash
 # Debian/Ubuntu
 sudo apt install iperf3
@@ -51,6 +63,11 @@ curl --proto '=https' --tlsv1.2 -LsSf https://github.com/Alfonso0p6/iperf3-tui/r
 irm https://github.com/Alfonso0p6/iperf3-tui/releases/latest/download/iperf3-tui-installer.ps1 | iex
 ```
 
+> **Note for Windows:** If you encounter a script execution error during installation, it means your PowerShell security policy restricts running scripts. You can enable script execution for your user by running PowerShell as Administrator and executing:
+> ```powershell
+> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
 ---
 
 ### From GitHub Releases
@@ -69,7 +86,7 @@ If you have Rust and Cargo installed:
 
 ```bash
 # Clone and run directly
-git clone [https://github.com/Alfonso0p6/iperf3-tui.git](https://github.com/Alfonso0p6/iperf3-tui.git)
+git clone https://github.com/Alfonso0p6/iperf3-tui.git
 cd iperf3-tui
 cargo run --release
 
