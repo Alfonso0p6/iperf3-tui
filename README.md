@@ -16,8 +16,7 @@ The application loads public `iperf3` servers, measures their TCP latency, lets 
 
 ## Requirements
 
-- Rust stable and Cargo
-- `iperf3` available on `PATH`
+- `iperf3` available on system `PATH`
 - A terminal with Unicode support
 
 Install `iperf3` using your operating system's package manager. For example:
@@ -31,15 +30,67 @@ sudo dnf install iperf3
 
 # Arch Linux
 sudo pacman -S iperf3
+
+# macOS
+brew install iperf3
 ```
 
-## Run
+## Installation
+
+### Fast One-Line Installers (Pre-compiled Binaries)
+
+You can install `iperf3-tui` instantly using the pre-compiled binaries from the latest release:
+
+#### Linux & macOS (Shell)
+```bash
+curl --proto '=https' --tlsv1.2 -lsSf [https://github.com/Alfonso0p6/iperf3-tui/releases/latest/download/iperf3-tui-installer.sh](https://github.com/Alfonso0p6/iperf3-tui/releases/latest/download/iperf3-tui-installer.sh) | sh
+```
+
+#### Windows (PowerShell)
+```powershell
+irm [https://github.com/Alfonso0p6/iperf3-tui/releases/latest/download/iperf3-tui-installer.ps1](https://github.com/Alfonso0p6/iperf3-tui/releases/latest/download/iperf3-tui-installer.ps1) | iex
+```
+
+---
+
+### From GitHub Releases
+
+You can manually download the standalone binary for your architecture from the [Releases Page](https://github.com/Alfonso0p6/iperf3-tui/releases):
+- **Linux (`x86_64-unknown-linux-musl`)**: Fully static binary (works on Alpine, Ubuntu, Debian, Arch, Fedora, etc.)
+- **Linux ARM64 (`aarch64-unknown-linux-gnu`)**: Raspberry Pi and ARM cloud instances
+- **macOS Apple Silicon (`aarch64-apple-darwin`)**: M1/M2/M3/M4 Macs
+- **Windows (`x86_64-pc-windows-msvc`)**: 64-bit Windows systems
+
+---
+
+### Build from Source
+
+If you have Rust and Cargo installed:
 
 ```bash
+# Clone and run directly
+git clone [https://github.com/Alfonso0p6/iperf3-tui.git](https://github.com/Alfonso0p6/iperf3-tui.git)
+cd iperf3-tui
 cargo run --release
+
+# Or install binary locally
+cargo install --path .
 ```
 
-The server catalog is fetched from `export.iperf3serverlist.net`. If the request fails, the application uses a small built-in fallback list.
+## Usage
+
+Once installed, you can launch the application directly from your terminal:
+
+```bash
+iperf3-tui
+```
+
+### Workflow
+
+1. **Startup**: The server catalog is fetched from `export.iperf3serverlist.net`. If the request fails, the application uses a small built-in fallback list. The app will automatically measure TCP latency for the available servers.
+2. **Select a Server**: Use the `Up`/`Down` arrows to navigate the server list, or press `/` to open the search bar and filter by country, provider, or latency.
+3. **Configure Test**: Press `Tab` to switch focus to the configuration panel. Press `Space` or `d`/`u`/`b` to cycle between Download, Upload, or Both (Download then Upload).
+4. **Start**: Press `F5` or `Enter` to execute the test. The bottom panel will render the live chart and throughput statistics.
 
 ## Controls
 
