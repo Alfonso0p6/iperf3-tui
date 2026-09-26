@@ -1,7 +1,7 @@
 [package]
 name = "iperf3-tui"
 version = "0.1.0"
-edition = "2026"
+edition = "2024"
 authors = ["Alfonso0p6"]
 description = "TUI wrapper avanzato e reattivo per iperf3 scritto in Rust"
 repository = "https://github.com/Alfonso0p6/iperf3-tui"
