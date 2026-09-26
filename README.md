@@ -106,6 +106,31 @@ iperf3-tui
 | `F5` | Start a test from any panel |
 | `Esc` | Exit search or quit |
 
+## Uninstallation
+
+To remove `iperf3-tui` from your system:
+
+### Linux / macOS
+```bash
+# If installed via the standard installer script
+rm ~/.local/bin/iperf3-tui
+
+# If installed via Cargo
+rm ~/.cargo/bin/iperf3-tui
+```
+
+### Windows (PowerShell)
+```powershell
+Remove-Item "$env:LOCALAPPDATA\iperf3-tui\iperf3-tui.exe" -ErrorAction SilentlyContinue
+Remove-Item "$env:USERPROFILE\.cargo\bin\iperf3-tui.exe" -ErrorAction SilentlyContinue
+```
+
+### Cargo
+If you installed it via `cargo install`:
+```bash
+cargo uninstall iperf3-tui
+```
+
 ## Project Layout
 
 - `src/app.rs`: application state, navigation, filtering, and throughput statistics
