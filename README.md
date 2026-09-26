@@ -74,4 +74,4 @@ cargo clippy --all-targets --all-features -- -D warnings
 
 ## License
 
-This project does not currently declare a license. Add one before distributing it publicly.
+Distributed under the GNU General Public License v3.0. See `LICENSE` for more information.

@@ -1,9 +1,10 @@
 [package]
 name = "iperf3-tui"
 version = "0.1.0"
-edition = "2021"
+edition = "2026"
 authors = ["Alfonso0p6"]
 description = "TUI wrapper avanzato e reattivo per iperf3 scritto in Rust"
+repository = "https://github.com/Alfonso0p6/iperf3-tui"
 
 [dependencies]
 # TUI & Terminal Handling
@@ -28,3 +29,8 @@ lto = true          # Link-Time Optimization globale
 codegen-units = 1   # Riduce il parallelismo in codegen per un'ottimizzazione massima
 strip = true        # Rimuove automaticamente i simboli di debug dal binario
 panic = 'abort'     # Rimuove il landing pad per la gestione del panico
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
