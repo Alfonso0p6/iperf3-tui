@@ -113,8 +113,8 @@ iperf3-tui
 
 | Key | Action |
 | --- | --- |
-| `Tab` | Switch to the previous panel |
-| `Shift+Tab` | Switch to the next panel |
+| `Tab` | Switch to the next panel |
+| `Shift+Tab` | Switch to the previous panel |
 | `Up` / `Down` | Move selection |
 | `/` | Search servers |
 | `Enter` | Change test mode in panel 2 or start a test in panel 3 |
